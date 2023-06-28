@@ -23,13 +23,13 @@
         .sec4-img1 {
             width: 40vw;
             height: 90vh;
-            background-image: url(../assets/images/website01.png);
+            background-image: url(assets/images/website01.png);
         }
         .sec4-linkbox {
             .sec4-img2 {
                 width: 30vw;
                 height: 70vh;
-                background-image: url(../assets/images/website02.jpg);
+                background-image: url(assets/images/website02.jpg);
             }
             .sec4-link {
                 border: 1px solid #C9C7C5;
@@ -48,7 +48,7 @@
                     img {
                         width: 14px;
                         height: 20px;
-                        background-image: url(../assets/images/link.svg);
+                        background-image: url(assets/images/link.svg);
                         background-repeat: no-repeat;
                         object-fit: cover;
                         position: absolute;
@@ -59,6 +59,7 @@
             }
         }
         .sec4-text {
+            background-image: url();
             > div {
                 text-transform: uppercase;
                 font-family: 'Poppins';

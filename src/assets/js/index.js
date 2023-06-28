@@ -14,8 +14,6 @@ gsap.set('#section1 .sec1-box .text .char', { autoAlpha: 0, y: 10 });
 gsap.set('#section1 .sec1-box .logo', { autoAlpha: 0, y: 50 });
 gsap.set('#section1 .sec1-box .scroll', { autoAlpha: 0, y: 50 });
 
-gsap.set('#section3 .sec3-text3 .char', { autoAlpha: 0, y: 10 });
-
 setTimeout(() => {
 	gsap.to('.sec1-wrap', {
 		duration: 1,
@@ -108,6 +106,28 @@ gsap.from('.sec2-img', {
 	},
 });
 
+gsap.registerPlugin(ScrollTrigger);
+
+const sec3Text = document.querySelectorAll('.sec3-text3 .split');
+const ani3 = gsap.timeline();
+
+sec3Text.forEach((line, index) => {
+	gsap.from(line, {
+		duration: 1,
+		opacity: 0,
+		y: 50,
+		ease: 'power3.out',
+		delay: index * 0.5,
+		toggleActions: 'play none none reverse',
+		scrollTrigger: {
+			trigger: '.sec3-text3',
+			start: 'top 80%',
+			end: 'top 50%',
+			toggleActions: 'play none none reverse',
+		},
+	});
+});
+
 gsap.from('.sec3-text1 img', {
 	opacity: 0,
 	duration: 1,
@@ -118,6 +138,7 @@ gsap.from('.sec3-text1 img', {
 		toggleActions: 'play none none reverse',
 	},
 });
+
 gsap.from('.sec3-text2 img', {
 	opacity: 0,
 	duration: 1.5,
@@ -128,6 +149,7 @@ gsap.from('.sec3-text2 img', {
 		toggleActions: 'play none none reverse',
 	},
 });
+
 gsap.from('.sec3-img img', {
 	opacity: 0,
 	duration: 2,
@@ -137,40 +159,4 @@ gsap.from('.sec3-img img', {
 		end: 'top 50%',
 		toggleActions: 'play none none reverse',
 	},
-});
-function scroll() {
-	let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-	document.querySelectorAll('.sec3-img').forEach(item => {
-		const sec3Img = item.querySelector('.sec3-img img');
-		let startOffset = 0;
-		let endOffset = (scrollTop - item.offsetTop) * 0.05;
-		let offset = gsap.utils.interpolate(startOffset, endOffset, 1);
-
-		gsap.to(sec3Img, {
-			y: offset,
-			duration: 0.8,
-			ease: 'power3.out',
-		});
-	});
-
-	requestAnimationFrame(scroll);
-}
-
-scroll();
-
-const sec3Text = document.querySelector('.sec3-text3');
-
-const ani3 = gsap.timeline();
-ani3.from('.sec3-text3 .line:nth-child(1) .char', {
-	y: 300,
-	autoAlpha: 0,
-	duration: 0.7,
-	ease: 'back.out(1)',
-	stagger: 0.05,
-});
-ScrollTrigger.create({
-	animation: ani3,
-	trigger: sec3Text,
-	start: 'top 70%',
-	markers: false,
 });
