@@ -106,17 +106,46 @@ gsap.from('.sec2-img', {
 	},
 });
 
+// gsap.from('.sec3-text1 img', {
+// 	opacity: 0,
+// 	duration: 1,
+// 	scrollTrigger: {
+// 		trigger: '.sec3-text1',
+// 		start: 'top 80%',
+// 		end: 'top 50%',
+// 		toggleActions: 'play none none reverse',
+// 	},
+// });
+// gsap.from('.sec3-text2 img', {
+// 	opacity: 0,
+// 	duration: 1.5,
+// 	scrollTrigger: {
+// 		trigger: '.sec3-text2',
+// 		start: 'top 80%',
+// 		end: 'top 50%',
+// 		toggleActions: 'play none none reverse',
+// 	},
+// });
+// gsap.from('.sec3-img img', {
+// 	opacity: 0,
+// 	duration: 2,
+// 	scrollTrigger: {
+// 		trigger: '.sec3-img',
+// 		start: 'top 80%',
+// 		end: 'top 50%',
+// 		toggleActions: 'play none none reverse',
+// 	},
+// });
 gsap.registerPlugin(ScrollTrigger);
 
 const sec3Text = document.querySelectorAll('.sec3-text3 .split');
+const sec3Img = document.querySelectorAll('.sec3-img img');
 const ani3 = gsap.timeline();
 
-sec3Text.forEach((line, index) => {
-	gsap.from(line, {
+sec3Text.forEach((char, index) => {
+	gsap.from(char, {
 		duration: 1,
 		opacity: 0,
-		y: 50,
-		ease: 'power3.out',
 		delay: index * 0.5,
 		toggleActions: 'play none none reverse',
 		scrollTrigger: {
@@ -150,13 +179,61 @@ gsap.from('.sec3-text2 img', {
 	},
 });
 
-gsap.from('.sec3-img img', {
-	opacity: 0,
-	duration: 2,
-	scrollTrigger: {
-		trigger: '.sec3-img',
-		start: 'top 80%',
-		end: 'top 50%',
-		toggleActions: 'play none none reverse',
-	},
+function scroll() {
+	let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	sec3Img.forEach(item => {
+		const sec3Img = item;
+		let startOffset = 0;
+		let endOffset = (scrollTop - item.offsetTop) * 0.05;
+		let offset = gsap.utils.interpolate(startOffset, endOffset, 1);
+
+		gsap.to(sec3Img, {
+			y: offset,
+			duration: 0.8,
+			ease: 'power3.out',
+		});
+	});
+
+	requestAnimationFrame(scroll);
+}
+
+scroll();
+
+const section4 = document.querySelector('#section4');
+const sec4Head = document.querySelector('.sec4-head');
+const sec4Span = document.querySelector('.sec4-head span');
+
+gsap.set(sec4Head, { scaleX: 0, borderBottomWidth: '0px', color: 'transparent' });
+
+const ani4 = gsap.timeline();
+
+ani4.from(sec4Head, {
+	scaleX: 1,
+	duration: 1,
+	transformOrigin: 'left',
+	ease: 'expo.inOut',
+})
+	.from(sec4Span, {
+		y: '0%',
+		opacity: 1,
+		duration: 0.8,
+		ease: 'expo.out',
+	})
+	.from(sec4Head, {
+		borderBottomWidth: '1px',
+		duration: 2,
+		transformOrigin: 'right',
+		ease: 'none',
+	})
+	.from(sec4Span, {
+		color: 'black',
+		duration: 2,
+		transformOrigin: 'right',
+		ease: 'none',
+	});
+
+ScrollTrigger.create({
+	trigger: sec4Head,
+	start: 'top 80%',
+	onEnter: () => ani4.play(),
 });
