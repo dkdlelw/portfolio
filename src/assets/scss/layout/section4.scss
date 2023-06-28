@@ -4,7 +4,7 @@
     margin: 0 auto;
 
     .sec4-head {
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid #C9C7C5;
         span {
             font-family: 'Poppins';
             text-transform: uppercase;
@@ -14,8 +14,8 @@
     }
 
     .sec4-img {
-        width: 81%;
-        padding-top: 2vh;
+        width: 75%;
+        padding-top: 4vh;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -24,12 +24,18 @@
             width: 40vw;
             height: 100vh;
             background-image: url(/assets/images/website01.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
         .sec4-linkbox {
             .sec4-img2 {
-                width: 30vw;
+                width: 25vw;
                 height: 70vh;
                 background-image: url(/assets/images/website02.jpg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
             }
             .sec4-link {
                 border: 1px solid #C9C7C5;
@@ -41,6 +47,7 @@
                     font-family: 'Poppins';
                     text-transform: uppercase;
                     font-size: 32px;
+                    align-items: center;
 
                 }
                 a {
@@ -54,7 +61,7 @@
                         object-fit: cover;
                         position: absolute;
                         right: 1.5vw;
-                        top: 1.5vw;
+                        top: 1.2vw;
                     }
                 }
             }
