@@ -1,0 +1,33 @@
+#section3 {
+    height: 100vh;  
+	background-color: #F9F8F6;
+    .sec3-text {
+		font-family: 'NeueMontreal';
+		font-weight: 300;
+		line-height: 0.9;
+		padding-left: 1vw;
+		margin-bottom: 25vw;
+
+        .sec3-text1 {
+            width: 30vw;
+            margin: 0 auto 1vw;
+        }
+        .sec3-text2 {
+            width: 55vw;
+            margin: 0 auto 3vw;
+        }
+        .sec3-img { 
+            width: 25vw;
+            margin: 0 auto;
+        }
+        .sec3-text3 {
+            width: 40vw;
+            margin: 3vw auto 5vw;
+            text-align: center;
+            font-family: 'IropkeBatang';
+            color: #333;
+            line-height: 1.5;
+            font-size: 20px;
+        }
+    }
+}
