@@ -1,0 +1,51 @@
+#section1 {
+	width: 100%;
+	height: 100vh;
+	background-image: url(../assets/images/bg.png);
+	background-position: center center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 100;
+	.sec1-box {
+		width: 60vw;
+		height: 60vh;
+		background-color: #F9F8F6;
+		font-family: 'NeueMontreal';
+		font-weight: 400;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		.text {
+			line-height: 1.2;
+			margin-bottom: 2vw;
+			text-align: center;
+			font-size: 18px;
+		}
+		.logo img {
+			width: 250px;
+			margin-bottom: 5vw;
+		}
+		a {
+			border: 1px solid #4B8FB6;
+			color: #4B8FB6;
+			text-transform: uppercase;
+			font-size: 12px;
+			padding: 10px 50px;
+		}
+	}
+	.sec1-wrap {
+		width: 100%;
+		height: 100%;
+		background-color: #ccdeff33;
+		backdrop-filter: blur(10px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+    	overflow: hidden;
+
+	}
+}
