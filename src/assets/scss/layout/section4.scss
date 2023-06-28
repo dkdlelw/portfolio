@@ -22,7 +22,7 @@
         
         .sec4-img1 {
             width: 40vw;
-            height: 90vh;
+            height: 100vh;
             background-image: url(assets/images/website01.png);
         }
         .sec4-linkbox {
@@ -44,8 +44,9 @@
 
                 }
                 a {
-                   
+                   display: flex;
                     img {
+                        flex-shrink: 1;
                         width: 14px;
                         height: 20px;
                         background-image: url(assets/images/link.svg);
@@ -59,7 +60,10 @@
             }
         }
         .sec4-text {
-            background-image: url();
+            > div::before {
+                background-image: url(assets/images/WebStandardsite.svg);
+            }
+            
             > div {
                 text-transform: uppercase;
                 font-family: 'Poppins';
