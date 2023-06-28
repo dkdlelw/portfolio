@@ -14,6 +14,8 @@ gsap.set('#section1 .sec1-box .text .char', { autoAlpha: 0, y: 10 });
 gsap.set('#section1 .sec1-box .logo', { autoAlpha: 0, y: 50 });
 gsap.set('#section1 .sec1-box .scroll', { autoAlpha: 0, y: 50 });
 
+gsap.set('#section3 .sec3-text3 .char', { autoAlpha: 0, y: 10 });
+
 setTimeout(() => {
 	gsap.to('.sec1-wrap', {
 		duration: 1,
@@ -108,7 +110,7 @@ gsap.from('.sec2-img', {
 
 gsap.from('.sec3-text1 img', {
 	opacity: 0,
-	duration: 2.5,
+	duration: 1,
 	scrollTrigger: {
 		trigger: '.sec3-text1',
 		start: 'top 80%',
@@ -118,7 +120,7 @@ gsap.from('.sec3-text1 img', {
 });
 gsap.from('.sec3-text2 img', {
 	opacity: 0,
-	duration: 3,
+	duration: 1.5,
 	scrollTrigger: {
 		trigger: '.sec3-text2',
 		start: 'top 80%',
@@ -128,7 +130,7 @@ gsap.from('.sec3-text2 img', {
 });
 gsap.from('.sec3-img img', {
 	opacity: 0,
-	duration: 3.5,
+	duration: 2,
 	scrollTrigger: {
 		trigger: '.sec3-img',
 		start: 'top 80%',
@@ -155,3 +157,20 @@ function scroll() {
 }
 
 scroll();
+
+const sec3Text = document.querySelector('.sec3-text3');
+
+const ani3 = gsap.timeline();
+ani3.from('.sec3-text3 .line:nth-child(1) .char', {
+	y: 300,
+	autoAlpha: 0,
+	duration: 0.7,
+	ease: 'back.out(1)',
+	stagger: 0.05,
+});
+ScrollTrigger.create({
+	animation: ani3,
+	trigger: sec3Text,
+	start: 'top 70%',
+	markers: false,
+});
