@@ -4,12 +4,15 @@
     margin: 0 auto;
 
     .sec4-head {
-        border-bottom: 1px solid #C9C7C5;
-        span {
+        > div {
             font-family: 'Poppins';
             text-transform: uppercase;
             font-weight: 300;
             font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .sec4-line {
+            border: 1px solid #C9C7C5;
         }
     }
 
@@ -19,6 +22,8 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+
+        
         
         .sec4-img1 {
             width: 40vw;
@@ -28,6 +33,7 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
+       
         .sec4-linkbox {
             .sec4-img2 {
                 width: 25vw;

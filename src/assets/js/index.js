@@ -106,36 +106,6 @@ gsap.from('.sec2-img', {
 	},
 });
 
-// gsap.from('.sec3-text1 img', {
-// 	opacity: 0,
-// 	duration: 1,
-// 	scrollTrigger: {
-// 		trigger: '.sec3-text1',
-// 		start: 'top 80%',
-// 		end: 'top 50%',
-// 		toggleActions: 'play none none reverse',
-// 	},
-// });
-// gsap.from('.sec3-text2 img', {
-// 	opacity: 0,
-// 	duration: 1.5,
-// 	scrollTrigger: {
-// 		trigger: '.sec3-text2',
-// 		start: 'top 80%',
-// 		end: 'top 50%',
-// 		toggleActions: 'play none none reverse',
-// 	},
-// });
-// gsap.from('.sec3-img img', {
-// 	opacity: 0,
-// 	duration: 2,
-// 	scrollTrigger: {
-// 		trigger: '.sec3-img',
-// 		start: 'top 80%',
-// 		end: 'top 50%',
-// 		toggleActions: 'play none none reverse',
-// 	},
-// });
 gsap.registerPlugin(ScrollTrigger);
 
 const sec3Text = document.querySelectorAll('.sec3-text3 .split');
@@ -199,41 +169,70 @@ function scroll() {
 
 scroll();
 
-const section4 = document.querySelector('#section4');
-const sec4Head = document.querySelector('.sec4-head');
-const sec4Span = document.querySelector('.sec4-head span');
-
-gsap.set(sec4Head, { scaleX: 0, borderBottomWidth: '0px', color: 'transparent' });
-
 const ani4 = gsap.timeline();
-
-ani4.from(sec4Head, {
-	scaleX: 1,
-	duration: 1,
-	transformOrigin: 'left',
-	ease: 'expo.inOut',
-})
-	.from(sec4Span, {
-		y: '0%',
+ani4.fromTo(
+	'#section4 .sec4-head .char',
+	{
+		x: 50,
+		opacity: 0,
+	},
+	{
+		delay: 0,
+		duration: 1,
+		x: 0,
 		opacity: 1,
-		duration: 0.8,
-		ease: 'expo.out',
-	})
-	.from(sec4Head, {
-		borderBottomWidth: '1px',
+		ease: 'power2.easeOut',
+		stagger: {
+			from: 'start',
+			amount: 0.5,
+		},
+	},
+);
+
+ani4.fromTo(
+	'#section4 .sec4-line',
+	{
+		scaleX: 0,
+		transformOrigin: 'left',
+	},
+	{
 		duration: 2,
-		transformOrigin: 'right',
-		ease: 'none',
-	})
-	.from(sec4Span, {
-		color: 'black',
-		duration: 2,
-		transformOrigin: 'right',
-		ease: 'none',
-	});
+		scaleX: 1,
+		ease: 'power3.out',
+		delay: 0,
+	},
+);
 
 ScrollTrigger.create({
-	trigger: sec4Head,
-	start: 'top 80%',
-	onEnter: () => ani4.play(),
+	trigger: '#section4',
+	start: 'top 20%',
+	animation: ani4,
+	markers: true,
+});
+
+//
+gsap.registerPlugin(ScrollTrigger);
+
+let revealContainers = document.querySelectorAll('.reveal');
+
+revealContainers.forEach(container => {
+	let image = container.querySelector('img');
+	let tl = gsap.timeline({
+		scrollTrigger: {
+			trigger: container,
+			toggleActions: 'restart none none reset',
+		},
+	});
+
+	tl.set(container, { autoAlpha: 1 });
+	tl.from(container, 1.5, {
+		xPercent: -100,
+		ease: Power2.out,
+	});
+	tl.from(image, 1.5, {
+		xPercent: 100,
+		scale: 1.3,
+		delay: -1.5,
+		ease: Power2.out,
+	});
 });
