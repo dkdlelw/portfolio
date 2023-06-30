@@ -72,9 +72,10 @@
     }
     .sec4-desc {
         position: absolute;
-        width: 23%;
-        right: 3.5vw;
-        top: 48vw;
+        width: 25%;
+        right: 1vw;
+        top: 46vw;
+
         > div {
             font-size: 18px;
             font-family: "Chosunilbo_myungjo";
@@ -82,17 +83,18 @@
         }
     }
     .sec4-img3 {
-        position: absolute;
-        top: 50vw;
-        right: 0;
         width: 23vw;
         height: 25vw;
+        display: block;
         background-image: url(/assets/images/leaf03.svg);
         background-repeat: no-repeat;
         background-size: contain;
-
+        background-position: center center;
+        position: absolute;
+        right: 0;
     }
     .sec4-text {
+        margin-top: 20vw;
         position: relative;
        
         .sec4-img4 {
@@ -103,9 +105,6 @@
             top: 10vw;
             background-image: url(/assets/images/ParallaxEffect.svg);
             background-repeat: no-repeat;
-            display: block;
-
-
         }
         > div {
             text-transform: uppercase;
