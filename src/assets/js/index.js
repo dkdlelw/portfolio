@@ -171,7 +171,7 @@ scroll();
 
 const ani4 = gsap.timeline();
 ani4.fromTo(
-	'#section4 .sec4-head .char',
+	'#section4 .sec4-header .char',
 	{
 		x: 50,
 		opacity: 0,
@@ -211,28 +211,26 @@ ScrollTrigger.create({
 });
 
 //
-gsap.registerPlugin(ScrollTrigger);
-
-let revealContainers = document.querySelectorAll('.reveal');
-
-revealContainers.forEach(container => {
-	let image = container.querySelector('img');
-	let tl = gsap.timeline({
-		scrollTrigger: {
-			trigger: container,
-			toggleActions: 'restart none none reset',
-		},
-	});
-
-	tl.set(container, { autoAlpha: 1 });
-	tl.from(container, 1.5, {
-		xPercent: -100,
-		ease: Power2.out,
-	});
-	tl.from(image, 1.5, {
-		xPercent: 100,
-		scale: 1.3,
-		delay: -1.5,
-		ease: Power2.out,
-	});
+const imageAnimation = gsap.timeline({
+	defaults: {
+		duration: 1.4,
+		ease: 'Power3.inOut',
+	},
 });
+
+imageAnimation
+	.from(
+		imageContainer,
+		{
+			yPercent: 100,
+		},
+		0,
+	)
+	.from(
+		image,
+		{
+			yPercent: -100,
+			scale: 1.15,
+		},
+		0,
+	);

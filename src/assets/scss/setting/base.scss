@@ -12,6 +12,7 @@ html {
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    max-width: 1920px;
 }
 
 /* 공백 초기화 */
@@ -193,8 +194,4 @@ select {
 .pt200 {padding-top: 200px;}
 
 //
-.reveal {
-    visibility: hidden;
-    position: relative;
-    overflow: hidden;
-  }
+

@@ -2,8 +2,10 @@
     padding: 20vh 10vh 20vh 10vh;
     background-color: #F9F8F6;
     margin: 0 auto;
+    position: relative;
 
-    .sec4-head {
+
+    .sec4-header {
         > div {
             font-family: 'Poppins';
             text-transform: uppercase;
@@ -15,50 +17,44 @@
             border: 1px solid #C9C7C5;
         }
     }
-
-    .sec4-img {
+    .img-wrap {
         width: 75%;
         padding-top: 4vh;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-
-        
-        
-        .sec4-img1 {
-            width: 40vw;
-            height: 100vh;
-            background-image: url(/assets/images/website01.png);
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-       
-        .sec4-linkbox {
-            .sec4-img2 {
-                width: 25vw;
-                height: 70vh;
-                background-image: url(/assets/images/website02.jpg);
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
-            .sec4-link {
-                border: 1px solid #C9C7C5;
-                padding: 0.5vw;
-                display: flex;
-                position: relative;
-
-                h4 {
-                    font-family: 'NeueMontreal';
-                    text-transform: uppercase;
-                    font-size: 32px;
-                    align-items: center;
-
+        .img-inner {
+            .img-container {
+                .sec4-img1 {
+                    width: 40vw;
+                    height: 100vh;
+                    background-image: url(/assets/images/website01.png);
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
                 }
-                a {
-                   display: flex;
-                    img {
+                .sec4-img2 {
+                    width: 25vw;
+                    height: 70vh;
+                    background-image: url(/assets/images/website02.jpg);
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                
+                }
+                .link {
+                    border: 1px solid #C9C7C5;
+                    padding: 0.5vw;
+                    display: flex;
+                    position: relative;
+
+                    span {
+                        font-family: 'NeueMontreal';
+                        text-transform: uppercase;
+                        font-size: 32px;
+                        align-items: center;
+                    }
+                    a {
                         flex-shrink: 1;
                         width: 14px;
                         height: 20px;
@@ -72,25 +68,59 @@
                 }
             }
         }
-        .sec4-text {
-            position: relative;
-            img {
-                width: 18vw;
-                display: inline;
-                position: absolute;
-                left: 50vw;
-                top: 15vw;
-            }
-          
+        
+    }
+    .sec4-desc {
+        position: absolute;
+        width: 23%;
+        right: 3.5vw;
+        top: 48vw;
+        > div {
+            font-size: 18px;
+            font-family: "Chosunilbo_myungjo";
+
         }
-        .sec4-text > div {
+    }
+    .sec4-img3 {
+        position: absolute;
+        top: 50vw;
+        right: 0;
+        width: 23vw;
+        height: 25vw;
+        background-image: url(/assets/images/leaf03.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+
+    }
+    .sec4-text {
+        position: relative;
+       
+        .sec4-img4 {
+            width: 40vw;
+            height: 18vw;
+            position: absolute;
+            left: 50vw;
+            top: 10vw;
+            background-image: url(/assets/images/ParallaxEffect.svg);
+            background-repeat: no-repeat;
+            display: block;
+
+
+        }
+        > div {
             text-transform: uppercase;
             font-family: 'Poppins';
             font-size: 300px;
             font-weight: 700;
             color: #D8D8D8;
             text-align: right;
+            white-space: nowrap;
+
         }
     }
 }
-@media (max-width: 1300px){}
+@media (max-width: 1920px){
+    body {
+        overflow-x: hidden;
+    }
+}
