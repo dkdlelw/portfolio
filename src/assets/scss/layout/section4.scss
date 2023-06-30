@@ -3,8 +3,6 @@
     background-color: #F9F8F6;
     margin: 0 auto;
     position: relative;
-
-
     .sec4-header {
         > div {
             font-family: 'Poppins';
@@ -16,6 +14,7 @@
         .sec4-line {
             border: 1px solid #C9C7C5;
         }
+
     }
     .img-wrap {
         width: 75%;
@@ -23,8 +22,21 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+
+        
         .img-inner {
-            .img-container {
+            .container1 {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                width: 100%;
+                position: relative;
+                visibility: hidden;
+                overflow: hidden;
+                object-fit: cover;
+                
+
                 .sec4-img1 {
                     width: 40vw;
                     height: 100vh;
@@ -32,7 +44,20 @@
                     background-position: center;
                     background-size: cover;
                     background-repeat: no-repeat;
+                    transform-origin: top;
+                    
                 }
+            }
+            .container2 {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 77vh;
+                width: 100%;
+                position: relative;
+                visibility: hidden;
+                overflow: hidden;
+                object-fit: cover;
                 .sec4-img2 {
                     width: 25vw;
                     height: 70vh;
@@ -40,14 +65,18 @@
                     background-position: center;
                     background-size: cover;
                     background-repeat: no-repeat;
-                
+                    transform-origin: top;
+
+                   
                 }
+                
                 .link {
                     border: 1px solid #C9C7C5;
                     padding: 0.5vw;
+                    height: 7vh;
                     display: flex;
                     position: relative;
-
+    
                     span {
                         font-family: 'NeueMontreal';
                         text-transform: uppercase;
@@ -67,6 +96,7 @@
                     }
                 }
             }
+            }
         }
         
     }
@@ -74,7 +104,7 @@
         position: absolute;
         width: 25%;
         right: 1vw;
-        top: 46vw;
+        top: 48vw;
 
         > div {
             font-size: 18px;
@@ -117,7 +147,8 @@
 
         }
     }
-}
+
+
 @media (max-width: 1920px){
     body {
         overflow-x: hidden;

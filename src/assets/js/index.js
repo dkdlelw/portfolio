@@ -177,7 +177,6 @@ ani4.fromTo(
 		opacity: 0,
 	},
 	{
-		delay: 0,
 		duration: 1,
 		x: 0,
 		opacity: 1,
@@ -207,30 +206,56 @@ ScrollTrigger.create({
 	trigger: '#section4',
 	start: 'top 20%',
 	animation: ani4,
-	markers: true,
+	markers: false,
 });
 
-//
-const imageAnimation = gsap.timeline({
-	defaults: {
-		duration: 1.4,
-		ease: 'Power3.inOut',
+gsap.set('.container1', { autoAlpha: 1, delay: 4 });
+gsap.from('.container1', {
+	duration: 1.5,
+	yPercent: -100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.container1 .sec4-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		markers: false,
+	},
+});
+gsap.from('.container1 .sec4-img1', {
+	duration: 1.5,
+	yPercent: 100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.container1 .sec4-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		delay: -1.5, // 애니메이션 시작 전 대기 시간
+		markers: false,
 	},
 });
 
-imageAnimation
-	.from(
-		imageContainer,
-		{
-			yPercent: 100,
-		},
-		0,
-	)
-	.from(
-		image,
-		{
-			yPercent: -100,
-			scale: 1.15,
-		},
-		0,
-	);
+gsap.set('.container2', { autoAlpha: 1, delay: 4 });
+
+gsap.from('.container2', {
+	duration: 1.5,
+	yPercent: -100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.container1 .sec4-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		markers: true,
+	},
+});
+gsap.from('.container2-1', {
+	duration: 1.5,
+	yPercent: 100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.container1 .sec4-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		delay: -1.5, // 애니메이션 시작 전 대기 시간
+		markers: false,
+	},
+});
