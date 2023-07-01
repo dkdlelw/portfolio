@@ -244,7 +244,7 @@ gsap.from('.container2', {
 		trigger: '.container1 .sec4-img1',
 		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
 		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
-		markers: true,
+		markers: false,
 	},
 });
 gsap.from('.container2-1', {
@@ -259,3 +259,14 @@ gsap.from('.container2-1', {
 		markers: false,
 	},
 });
+gsap.from('.sec4-img3', {
+	opacity: 0,
+	duration: 2.5,
+	scrollTrigger: {
+		trigger: '.sec4-img3',
+		start: 'top 80%',
+		end: 'top 50%',
+		toggleActions: 'play none none reverse',
+	},
+});
+
