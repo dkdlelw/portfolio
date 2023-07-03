@@ -317,20 +317,47 @@
         <div class="sec10-img3"></div>
       </section>
       <!-- //section 10 -->
+
       <section id="section11">
-        <div class="sec11-img1"></div>
-        <div class="sec11-text1">
-          <div class="sec11-title split">react site01</div>
-          <div class="sec11-desc split">항공기계설계를 전공으로 공부하였고, 다양한 분야의 업무를 하며 나의 적성에 맞는 일을 찾고자 노력을 했습니다. 다니던 대학원을 휴학하고
-            국비지원학원에서 약 6개월간의 여정을 시작했습니다. 항공기계설계를 전공으로 공부하였고</div>
-        </div>
-        <div class="sec11-text2">
-          <div class="split">react</div>
-          <div class="sec11-img2"></div>
+        <div class="sec11-wrap">
+          <div class="sec11-inner">
+            <div class="sec11-img1"></div>
+            <div class="sec11-intro">
+              <div class="sec11-title split">react site 01</div>
+              <div class="sec11-desc split">항공기계설계를 전공으로 공부하였고, 다양한 분야의 업무를 하며 나의 적성에 맞는 일을 찾고자 노력을 했습니다. 다니던 대학원을 휴학하고
+                국비지원학원에서 약 6개월간의 여정을 시작했습니다. 항공기계설계를 전공으로 공부하였고
+              </div>
+              <a href="#" class="sec11-btn">view code</a>
+              <a href="#" class="sec11-btn">view site</a>
+            </div>
+          </div>
+          <div class="sec11-text">
+            <div class="sec11-img2"></div>
+            <div class="split">react</div>
+          </div>
         </div>
       </section>
       <!-- //section 11 -->
-      <section id="section12"></section>
+      <section id="section12">
+        <div class="sec12-wrap">
+          <div class="sec12-inner">
+            <div class="sec12-img1"></div>
+            <div class="sec12-intro">
+              <div class="sec12-title split">react site 01</div>
+              <div class="sec12-desc split">항공기계설계를 전공으로 공부하였고, 다양한 분야의 업무를 하며 나의 적성에 맞는 일을 찾고자 노력을 했습니다. 다니던 대학원을 휴학하고
+                국비지원학원에서 약 6개월간의 여정을 시작했습니다. 항공기계설계를 전공으로 공부하였고
+              </div>
+              <a href="#" class="sec12-btn">view code</a>
+              <a href="#" class="sec12-btn">view site</a>
+            </div>
+          </div>
+          <div class="sec12-text">
+            <div class="sec12-img2"></div>
+            <div class="split">react</div>
+          </div>
+        </div>
+        </section>
+      </section>
       <section id="section13"></section>
       <section id="section14"></section>
       <section id="section15"></section>
@@ -384,7 +411,7 @@
     //     },
     //   });
     const horizontal = document.querySelector("#horizontal");
-    const horizonSec = document.querySelector("#section10")
+    const horizonSec = document.querySelector("#horizontal > section")
     const horizonAni = gsap.timeline();
     horizonAni.to(horizontal, { x: "-100vw" })
     ScrollTrigger.create({

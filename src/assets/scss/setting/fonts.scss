@@ -149,3 +149,10 @@ font-display: swap;
         url('/assets/fonts/NeueMontreal-Bold.woff') format('woff');
     font-display: swap;
 }
+@font-face {
+    font-family: 'Questrial';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/assets/fonts/Questrial-Regular.woff2') format('woff2');
+    font-display: swap;
+}

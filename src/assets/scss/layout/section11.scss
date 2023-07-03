@@ -1,5 +1,88 @@
 #section11 {
-	background-color: #F9F8F6;
-    width: 100vw;
-    height: 100vh;
+  background-color: #F9F8F6;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+
+  .sec11-wrap {
+    position: relative;
+
+    .sec11-inner {
+      display: flex;
+
+      .sec11-img1 {
+        width: 63vw;
+        height: 43vw;
+        background-image: url(/assets/images/ReactSite01.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 1;
+      }
+
+      .sec11-intro {
+        margin-top: 10vw;
+        position: relative;
+
+        .sec11-title {
+          text-transform: uppercase;
+          font-family: "Poppins";
+          font-weight: 600;
+          font-size: 60px;
+        }
+
+        .sec11-desc {
+          width: 27.6vw;
+          font-family: "Chosunilbo_myungjo";
+          font-size: 18px;
+          line-height: 1.6;
+          margin-bottom: 3.1vw;
+        }
+
+        .sec11-btn {
+          display: inline-block;
+          width: 6.5vw;
+          text-align: center;
+          text-transform: uppercase;
+          font-family: "Questrial";
+          color: #4B8FB6;
+          border: 1px solid #4B8FB6;
+          border-radius: 30px;
+          padding: 8px;
+
+          &:hover {
+            color: #F9F8F6;
+            background-color: #4B8FB6;
+          }
+        }
+      }
+    }
+
+    .sec11-text {
+      position: absolute;
+      top: 31vw;
+      left: 40vw;
+      z-index: -1;
+
+      .sec11-img2 {
+        width: 8.4vw;
+        height: 5.3vw;
+        background-image: url(/assets/images/React.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 10vw;
+        left: 20vw;
+      }
+
+      >div {
+        text-transform: uppercase;
+        font-family: 'Poppins';
+        font-size: 300px;
+        font-weight: 700;
+        color: #D8D8D8;
+        white-space: nowrap;
+        z-index: 1;
+      }
+    }
   }
+}
