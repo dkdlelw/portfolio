@@ -13,3 +13,11 @@
     height: 100vh;
     display: flex;
 }
+#horizontal {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 600vw;
+}
+#horizontal > section {
+    width: 100vw;
+}
