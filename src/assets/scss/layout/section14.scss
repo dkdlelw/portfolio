@@ -1,14 +1,16 @@
-#section12 {
+#section14 {
     background-color: #F9F8F6;
+    width: 100vw;
+    height: 100vh;
     z-index: -2;
 
-    .sec12-wrap {
+    .sec14-wrap {
         position: relative;
 
-        .sec12-inner {
+        .sec14-inner {
             display: flex;
 
-            .sec12-img1 {
+            .sec14-img1 {
                 width: 63vw;
                 height: 43vw;
                 background-image: url(/assets/images/ReactSite01.png);
@@ -17,18 +19,18 @@
                 z-index: 1;
             }
 
-            .sec12-intro {
+            .sec14-intro {
                 margin-top: 10vw;
                 position: relative;
 
-                .sec12-title {
+                .sec14-title {
                     text-transform: uppercase;
                     font-family: "Poppins";
                     font-weight: 600;
                     font-size: 60px;
                 }
 
-                .sec12-desc {
+                .sec14-desc {
                     width: 27.6vw;
                     font-family: "Chosunilbo_myungjo";
                     font-size: 18px;
@@ -36,7 +38,7 @@
                     margin-bottom: 3.1vw;
                 }
 
-                .sec12-btn {
+                .sec14-btn {
                     display: inline-block;
                     width: 6.5vw;
                     text-align: center;
@@ -55,21 +57,20 @@
             }
         }
 
-        .sec12-text {
+        .sec14-text {
             position: absolute;
             top: 31vw;
             left: 40vw;
             z-index: -1;
 
-            .sec12-img2 {
-                width: 8.4vw;
+            .sec14-img2 {
+                width: 30.2vw;
                 height: 5.3vw;
-                background-image: url(/assets/images/React.svg);
+                background-image: url(/assets/images/php.svg);
                 background-repeat: no-repeat;
                 background-position: center;
                 position: absolute;
-                top: 10vw;
-                left: 20vw;
+                top: 8vw;
             }
 
             >div {

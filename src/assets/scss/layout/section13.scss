@@ -1,12 +1,12 @@
-#section10 {
+#section13 {
 	background-color: #F9F8F6;
 	position: relative;
 	z-index: 1000;
     overflow: hidden;
-	.sec10-img {
+	.sec13-img {
 		display: flex;
 		flex-wrap: wrap;
-		.sec10-img1 {
+		.sec13-img1 {
 			width: 23.6vw;
 			height: 27vw;
 			background-image: url(/assets/images/leaf04.svg); 
@@ -14,9 +14,9 @@
 			background-size: contain;
 		  }
 				
-		.sec10-img2 {
+		.sec13-img2 {
 			width: 30vw;
-			background-image: url(/assets/images/React_blue.svg);
+			background-image: url(/assets/images/php_blue.svg);
 			background-repeat: no-repeat;
 			background-position: center center;
 			position: absolute;
@@ -25,7 +25,7 @@
 	
 		}
 	}
-    .sec10-text {
+    .sec13-text {
         padding: 5vw;
 		font-size: 10vw;
 		overflow: hidden;
@@ -41,7 +41,7 @@
 		}
 		
 	}
-	.sec10-img3 {
+	.sec13-img3 {
 		width: 16.7vw;
         height: 55vh;
         background-image: url(/assets/images/leaf05.svg);

@@ -270,3 +270,16 @@ gsap.from('.sec4-img3', {
 	},
 });
 
+//가로모드
+const horizontal = document.querySelector('#horizontal');
+const horizonSec = document.querySelector('#section10');
+const horizonAni = gsap.timeline();
+horizonAni.to(horizontal, { x: '-500vw' });
+ScrollTrigger.create({
+	animation: horizonAni,
+	trigger: horizontal,
+	start: 'top top',
+	end: '+=5000',
+	pin: true,
+	scrub: true,
+});

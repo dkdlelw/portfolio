@@ -316,7 +316,7 @@
         </div>
         <div class="sec10-img3"></div>
       </section>
-      <!-- //section 10 -->
+      <!-- //section10 -->
 
       <section id="section11">
         <div class="sec11-wrap">
@@ -337,13 +337,14 @@
           </div>
         </div>
       </section>
-      <!-- //section 11 -->
+      <!-- //section11 -->
+
       <section id="section12">
         <div class="sec12-wrap">
           <div class="sec12-inner">
             <div class="sec12-img1"></div>
             <div class="sec12-intro">
-              <div class="sec12-title split">react site 01</div>
+              <div class="sec12-title split">react site 02</div>
               <div class="sec12-desc split">항공기계설계를 전공으로 공부하였고, 다양한 분야의 업무를 하며 나의 적성에 맞는 일을 찾고자 노력을 했습니다. 다니던 대학원을 휴학하고
                 국비지원학원에서 약 6개월간의 여정을 시작했습니다. 항공기계설계를 전공으로 공부하였고
               </div>
@@ -356,13 +357,67 @@
             <div class="split">react</div>
           </div>
         </div>
-        </section>
       </section>
-      <section id="section13"></section>
-      <section id="section14"></section>
-      <section id="section15"></section>
+      <!-- //section12 -->
 
+      <section id="section13">
+        <div class="sec13-img">
+          <div class="sec13-img1"></div>
+          <div class="sec13-img2"></div>
+        </div>
+        <div class="sec13-text">
+          <div class="split">reactsite</div>
+          <div class="split">phpsite</div>
+        </div>
+        <div class="sec13-img3"></div>
+      </section>
+      <!-- //section13 -->
+
+      <section id="section14">
+        <div class="sec14-wrap">
+          <div class="sec14-inner">
+            <div class="sec14-img1"></div>
+            <div class="sec14-intro">
+              <div class="sec14-title split">php site 01</div>
+              <div class="sec14-desc split">항공기계설계를 전공으로 공부하였고, 다양한 분야의 업무를 하며 나의 적성에 맞는 일을 찾고자 노력을 했습니다. 다니던 대학원을 휴학하고
+                국비지원학원에서 약 6개월간의 여정을 시작했습니다. 항공기계설계를 전공으로 공부하였고
+              </div>
+              <a href="#" class="sec14-btn">view code</a>
+              <a href="#" class="sec14-btn">view site</a>
+            </div>
+          </div>
+          <div class="sec14-text">
+            <div class="sec14-img2"></div>
+            <div class="split">php</div>
+          </div>
+        </div>
+      </section>
+      <!-- //section14 -->
+
+      <section id="section15">
+        <div class="sec15-wrap">
+          <div class="sec15-inner">
+            <div class="sec15-img1"></div>
+            <div class="sec15-intro">
+              <div class="sec15-title split">php site 02</div>
+              <div class="sec15-desc split">항공기계설계를 전공으로 공부하였고, 다양한 분야의 업무를 하며 나의 적성에 맞는 일을 찾고자 노력을 했습니다. 다니던 대학원을 휴학하고
+                국비지원학원에서 약 6개월간의 여정을 시작했습니다. 항공기계설계를 전공으로 공부하였고
+              </div>
+              <a href="#" class="sec15-btn">view code</a>
+              <a href="#" class="sec15-btn">view site</a>
+            </div>
+          </div>
+          <div class="sec15-text">
+            <div class="sec15-img2"></div>
+            <div class="split">php</div>
+          </div>
+        </div>
+      </section>
+      <!-- //section15 -->
     </main>
+    <!-- //가로모드 끝 -->
+
+
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
@@ -371,59 +426,6 @@
 
   <script src="https://unpkg.com/split-type"></script>
   <script type="module" src="main.js"></script>
-  <script>
-    //가로모드
-    // let sections = gsap.utils.toArray(".parallax__item");
-    //   let scrollTween = gsap.to(sections, {
-    //     x: -(document.querySelector("#parallax__cont").offsetWidth - window.innerWidth),
-    //     ease: "none",
-    //     scrollTrigger: {
-    //       trigger: "#parallax__cont",
-    //       pin: true,
-    //       anticipatePin: 1,
-    //       scrub: 1,
-    //       end: "+=7000",
-    //     }
-    //   });
-    //   // 섹션1
-    //   gsap.to(".text-wrap .t2", {
-    //     duration: 1,
-    //     x: -900,
-    //     scrollTrigger: {
-    //       trigger: ".text-wrap",
-    //       containerAnimation: scrollTween,
-    //       start: "left right",
-    //       end: "right left",
-    //       scrub: 0.5,
-    //       markers: false,
-    //     },
-    //   });
-    //   gsap.to(".text-wrap .t3", {
-    //     duration: 1,
-    //     x: -300,
-    //     scrollTrigger: {
-    //       trigger: ".text-wrap",
-    //       containerAnimation: scrollTween,
-    //       start: "left right",
-    //       end: "right left",
-    //       scrub: 1,
-    //       markers: false,
-    //     },
-    //   });
-    const horizontal = document.querySelector("#horizontal");
-    const horizonSec = document.querySelector("#horizontal > section")
-    const horizonAni = gsap.timeline();
-    horizonAni.to(horizontal, { x: "-100vw" })
-    ScrollTrigger.create({
-      animation: horizonAni,
-      trigger: horizontal,
-      start: "top top",
-      end: "+=5000",
-      pin: true,
-      scrub: true,
-    })
-
-  </script>
 </body>
 
 </html>
