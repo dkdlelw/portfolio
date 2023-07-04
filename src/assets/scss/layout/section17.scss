@@ -2,28 +2,32 @@
     background-color: #F9F8F6;
     width: 100vw;
     height: 100vh;
-    z-index: -1;
     position: relative;
+    z-index: -1;
     .sec17-img1 {
-        width: 41.4vw;
-        height: 28.4vw;
+        width: 30.3vw;
+        height: 20.8vw;
         background-image: url(/assets/images/contact.png);
+        background-size: contain;
         position: absolute;
-        left: 30vw;
+        left: 35vw;
         top: 8vw;
+        z-index: 1;
     }
     .sec17-img2 {
-        width: 16vw;
-        height: 19.8vw;
+        width: 14vw;
+        height: 18vw;
         background-image: url(/assets/images/leaf06.svg);
         background-repeat: no-repeat;
+        background-size: contain;
         position: absolute;
         right: 0;
-        top: 25vw;
+        top: 16vw;
     }
     .sec17-text {
         position: absolute;
-        top: 8vw;
+        margin-top: 20vw;
+        z-index: -1;
         > div {
             text-transform: uppercase;
             font-family: 'Poppins';
@@ -31,7 +35,11 @@
             font-weight: 600;
             color: #D8D8D8;
             white-space: nowrap;
-            z-index: 1;
+            line-height: 0.8;
+            
+            &:last-child {
+                margin-left: 40vw;
+            }
         }
 
     }
