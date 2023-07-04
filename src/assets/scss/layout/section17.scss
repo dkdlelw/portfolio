@@ -2,8 +2,37 @@
     background-color: #F9F8F6;
     width: 100vw;
     height: 100vh;
-    .sec17-img1 {}
+    z-index: -1;
+    position: relative;
+    .sec17-img1 {
+        width: 41.4vw;
+        height: 28.4vw;
+        background-image: url(/assets/images/contact.png);
+        position: absolute;
+        left: 30vw;
+        top: 8vw;
+    }
     .sec17-img2 {
+        width: 16vw;
+        height: 19.8vw;
         background-image: url(/assets/images/leaf06.svg);
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 0;
+        top: 25vw;
+    }
+    .sec17-text {
+        position: absolute;
+        top: 8vw;
+        > div {
+            text-transform: uppercase;
+            font-family: 'Poppins';
+            font-size: 300px;
+            font-weight: 600;
+            color: #D8D8D8;
+            white-space: nowrap;
+            z-index: 1;
+        }
+
     }
 }
