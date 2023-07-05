@@ -1,0 +1,95 @@
+#section18 {
+    width: 100%;
+    height: 150vh;
+    background-color: #F0EFED;
+    position: relative;
+    .sec18-img {
+        width: 20vw;
+        height: 50vh;
+        background-image: url(/assets/images/leaf01.svg); 
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+    }
+    .sec18-list {
+        position: absolute;
+        right: 0;
+        top: 2vw;
+        ul {
+			li {
+				text-align: right;
+                font-family: "Questrial";
+                text-transform: uppercase;
+                font-size: 20px;
+			}
+		}
+    }
+    .center {
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        
+        .sec18-text {
+            line-height: 1.2;
+            margin-bottom: 2vw;
+            align-items: center;
+            font-size: 18px;
+
+        }
+        .sec18-btn {
+            border: 1px solid #4B8FB6;
+            color: #4B8FB6;
+            text-transform: uppercase;
+            font-size: 12px;
+            padding: 10px 50px;
+            font-family: "Questrial";
+
+        }
+    }
+    .sec18-name {
+        margin-top: 10vw;
+        text-transform: uppercase;
+        font-family: 'Poppins';
+        font-size: 245px;
+        font-weight: 600;
+        color: #333333;
+        white-space: nowrap;
+        line-height: 0.8;
+        letter-spacing: -4.5px;
+    }
+    .sec18-footer {
+        .footer__header {
+            border-top: 1px solid #919090;
+            border-bottom: 1px solid #919090;
+            height: 2.7vw;
+            padding: 0.8vw;
+            p {
+                text-transform: uppercase;
+                font-family: "Questrial";
+                font-size: 0.8vw;
+                text-align: center;
+            }
+        }
+        .footer__wrap {
+            display: flex;
+            border-bottom: 1px solid #919090;
+            height: 13.2vw;
+            text-align: center;
+            .footer__left {
+                width: 50%;
+                border-right: 1px solid #919090;
+                
+                > div {
+                    text-transform: uppercase;
+                    font-family: 'Poppins';
+                }
+            }
+            .footer__right {
+                width: 50%;
+
+            }
+        }
+    }
+    .copyright {}
+}
