@@ -65,7 +65,7 @@ ScrollTrigger.create({
 const panel2 = document.querySelector('#section2');
 
 const ani1 = gsap.timeline();
-ani1.to('.sec1-box', { duration: 4, scale: 5, ease: 'none' });
+ani1.to('.sec1-box', { duration: 4, scale: 5, ease: 'none' , backgroundColor:"#4B8FB6"});
 
 ScrollTrigger.create({
 	animation: ani1,
@@ -261,13 +261,42 @@ gsap.from('.container2-1', {
 });
 gsap.from('.sec4-img3', {
 	opacity: 0,
-	duration: 2.5,
+	duration: 3,
 	scrollTrigger: {
 		trigger: '.sec4-img3',
 		start: 'top 80%',
 		end: 'top 50%',
 		toggleActions: 'play none none reverse',
 	},
+});
+
+gsap.from('.sec4-desc', {
+	opacity: 0,
+	duration: 3,
+	scrollTrigger: {
+		trigger: '.sec4-desc',
+		start: 'top 80%',
+		end: 'top 50%',
+		toggleActions: 'play none none reverse',
+	},
+});
+const sec4Text = document.querySelector('.sec4-text');
+
+const ani4_1 = gsap.timeline();
+ani4_1.from('.sec4-text .line .char', {
+	y: 300,
+	autoAlpha: 0,
+	duration: 0.7,
+	ease: 'back.out(1)',
+	stagger: 0.05,
+});
+
+ScrollTrigger.create({
+	animation: ani4_1,
+	trigger: sec4Text,
+	start: 'top 70%',
+	markers: false,
+	// scrub: 0.5
 });
 
 //가로모드
@@ -283,3 +312,4 @@ ScrollTrigger.create({
 	pin: true,
 	scrub: true,
 });
+np
