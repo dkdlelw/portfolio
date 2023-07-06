@@ -14,7 +14,7 @@
 
 
         .img-inner {
-            .container1 {
+            .sec8-con1 {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
@@ -38,7 +38,7 @@
                 }
             }
 
-            .container2 {
+            .sec8-con2 {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
@@ -130,7 +130,7 @@
         color: #D8D8D8;
         text-align: right;
         white-space: nowrap;
-
+        z-index: 200;
     }
 }
 

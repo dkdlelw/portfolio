@@ -65,7 +65,7 @@ ScrollTrigger.create({
 const panel2 = document.querySelector('#section2');
 
 const ani1 = gsap.timeline();
-ani1.to('.sec1-box', { duration: 4, scale: 5, ease: 'none' , backgroundColor:"#4B8FB6"});
+ani1.to('.sec1-box', { duration: 4, scale: 5, ease: 'none', backgroundColor: '#4B8FB6' });
 
 ScrollTrigger.create({
 	animation: ani1,
@@ -184,6 +184,7 @@ ani4.fromTo(
 		stagger: {
 			from: 'start',
 			amount: 0.5,
+			delay: -1.5,
 		},
 	},
 );
@@ -197,8 +198,8 @@ ani4.fromTo(
 	{
 		duration: 2,
 		scaleX: 1,
-		ease: 'power3.out',
-		delay: 0,
+		ease: 'power4.out',
+		delay: -1.5,
 	},
 );
 
@@ -209,53 +210,53 @@ ScrollTrigger.create({
 	markers: false,
 });
 
-gsap.set('.container1', { autoAlpha: 1, delay: 4 });
-gsap.from('.container1', {
+gsap.set('.sec4-con1', { autoAlpha: 1, delay: 4 });
+gsap.from('.sec4-con1', {
 	duration: 1.5,
 	yPercent: -100,
 	ease: 'power2.out',
 	scrollTrigger: {
-		trigger: '.container1 .sec4-img1',
+		trigger: '.sec4-con1 .sec4-img1',
 		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
 		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
 		markers: false,
 	},
 });
-gsap.from('.container1 .sec4-img1', {
+gsap.from('.sec4-con1 .sec4-img1', {
 	duration: 1.5,
 	yPercent: 100,
 	ease: 'power2.out',
 	scrollTrigger: {
-		trigger: '.container1 .sec4-img1',
+		trigger: '.sec4-con1 .sec4-img1',
 		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
 		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
-		delay: -1.5, // 애니메이션 시작 전 대기 시간
+		delay: 1.5, // 애니메이션 시작 전 대기 시간
 		markers: false,
 	},
 });
 
-gsap.set('.container2', { autoAlpha: 1, delay: 4 });
+gsap.set('.sec4-con2', { autoAlpha: 1, delay: 4 });
 
-gsap.from('.container2', {
+gsap.from('.sec4-con2', {
 	duration: 1.5,
 	yPercent: -100,
 	ease: 'power2.out',
 	scrollTrigger: {
-		trigger: '.container1 .sec4-img1',
+		trigger: '.sec4-con1 .sec4-img1',
 		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
 		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
 		markers: false,
 	},
 });
-gsap.from('.container2-1', {
+gsap.from('.sec4-con2-1', {
 	duration: 1.5,
 	yPercent: 100,
 	ease: 'power2.out',
 	scrollTrigger: {
-		trigger: '.container1 .sec4-img1',
+		trigger: '.sec4-con1 .sec4-img1',
 		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
 		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
-		delay: -1.5, // 애니메이션 시작 전 대기 시간
+		delay: 1.5, // 애니메이션 시작 전 대기 시간
 		markers: false,
 	},
 });
@@ -266,6 +267,7 @@ gsap.from('.sec4-img3', {
 		trigger: '.sec4-img3',
 		start: 'top 80%',
 		end: 'top 50%',
+		delay: 5,
 		toggleActions: 'play none none reverse',
 	},
 });
@@ -277,6 +279,7 @@ gsap.from('.sec4-desc', {
 		trigger: '.sec4-desc',
 		start: 'top 80%',
 		end: 'top 50%',
+		delay: 5,
 		toggleActions: 'play none none reverse',
 	},
 });
@@ -299,6 +302,460 @@ ScrollTrigger.create({
 	// scrub: 0.5
 });
 
+//section5
+const ani5 = gsap.timeline();
+ani5.fromTo(
+	'#section5 .sec5-header .char',
+	{
+		x: 50,
+		opacity: 0,
+	},
+	{
+		duration: 1,
+		x: 0,
+		opacity: 1,
+		ease: 'power2.easeOut',
+		stagger: {
+			from: 'start',
+			amount: 0.5,
+			delay: -1.5,
+		},
+	},
+);
+
+ani5.fromTo(
+	'#section5 .sec5-line',
+	{
+		scaleX: 0,
+		transformOrigin: 'left',
+	},
+	{
+		duration: 2,
+		scaleX: 1,
+		ease: 'power4.out',
+		delay: -1.5,
+	},
+);
+
+ScrollTrigger.create({
+	trigger: '#section5',
+	start: 'top 20%',
+	animation: ani5,
+	markers: false,
+});
+gsap.set('.sec5-con1', { autoAlpha: 1, delay: 4 });
+gsap.from('.sec5-con1', {
+	duration: 1.5,
+	yPercent: -100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec5-con1 .sec5-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		markers: false,
+	},
+});
+gsap.from('.sec5-con1 .sec5-img1', {
+	duration: 1.5,
+	yPercent: 100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec5-con1 .sec5-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		delay: 1, // 애니메이션 시작 전 대기 시간
+		markers: false,
+	},
+});
+
+gsap.set('.sec5-con2', { autoAlpha: 1, delay: 4 });
+
+gsap.from('.sec5-con2', {
+	duration: 1.5,
+	yPercent: -100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec5-con1 .sec5-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		markers: false,
+	},
+});
+gsap.from('.sec5-con2-1', {
+	duration: 1.5,
+	yPercent: 100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec5-con1 .sec5-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		delay: 1, // 애니메이션 시작 전 대기 시간
+		markers: false,
+	},
+});
+
+gsap.from('.sec5-desc', {
+	opacity: 0,
+	duration: 3,
+	scrollTrigger: {
+		trigger: '.sec5-desc',
+		start: 'top 80%',
+		end: 'top 50%',
+		delay: 3,
+		toggleActions: 'play none none reverse',
+	},
+});
+const sec5Text = document.querySelector('.sec5-text');
+
+const ani5_1 = gsap.timeline();
+ani5_1.from('.sec5-text .line .char', {
+	y: 300,
+	autoAlpha: 0,
+	duration: 0.7,
+	ease: 'back.out(1)',
+	stagger: 0.05,
+});
+
+ScrollTrigger.create({
+	animation: ani5_1,
+	trigger: sec5Text,
+	start: 'top 70%',
+	markers: false,
+	// scrub: 0.5
+});
+
+//section6
+const ani6 = gsap.timeline();
+
+gsap.set('.sec6-con1', { autoAlpha: 1, delay: 4 });
+gsap.from('.sec6-con1', {
+	duration: 1.5,
+	yPercent: -100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec6-con1 .sec6-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		markers: false,
+	},
+});
+gsap.from('.sec6-con1 .sec6-img1', {
+	duration: 1.5,
+	yPercent: 100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec6-con1 .sec6-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		delay: 1, // 애니메이션 시작 전 대기 시간
+		markers: false,
+	},
+});
+
+gsap.set('.sec6-con2', { autoAlpha: 1, delay: 4 });
+
+gsap.from('.sec6-con2', {
+	duration: 1.5,
+	yPercent: -100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec6-con1 .sec6-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		markers: false,
+	},
+});
+gsap.from('.sec6-con2-1', {
+	duration: 1.5,
+	yPercent: 100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec6-con1 .sec6-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		delay: 1, // 애니메이션 시작 전 대기 시간
+		markers: false,
+	},
+});
+
+gsap.from('.sec6-desc', {
+	opacity: 0,
+	duration: 3,
+	scrollTrigger: {
+		trigger: '.sec6-desc',
+		start: 'top 80%',
+		end: 'top 50%',
+		delay: 3,
+		toggleActions: 'play none none reverse',
+	},
+});
+const sec6Text = document.querySelector('.sec6-text');
+
+ani6.from('.sec6-text .line .char', {
+	y: 300,
+	autoAlpha: 0,
+	duration: 0.7,
+	ease: 'back.out(1)',
+	stagger: 0.05,
+});
+
+ScrollTrigger.create({
+	animation: ani6,
+	trigger: sec6Text,
+	start: 'top 70%',
+	markers: false,
+	// scrub: 0.5
+});
+
+//section7
+const ani7 = gsap.timeline();
+
+gsap.set('.sec7-con1', { autoAlpha: 1, delay: 4 });
+gsap.from('.sec7-con1', {
+	duration: 1.5,
+	yPercent: -100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec7-con1 .sec7-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		markers: false,
+	},
+});
+gsap.from('.sec7-con1 .sec7-img1', {
+	duration: 1.5,
+	yPercent: 100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec7-con1 .sec7-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		delay: 1, // 애니메이션 시작 전 대기 시간
+		markers: false,
+	},
+});
+
+gsap.set('.sec7-con2', { autoAlpha: 1, delay: 4 });
+
+gsap.from('.sec7-con2', {
+	duration: 1.5,
+	yPercent: -100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec7-con1 .sec7-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		markers: false,
+	},
+});
+gsap.from('.sec7-con2-1', {
+	duration: 1.5,
+	yPercent: 100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec7-con1 .sec7-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		delay: 1, // 애니메이션 시작 전 대기 시간
+		markers: false,
+	},
+});
+
+gsap.from('.sec7-desc', {
+	opacity: 0,
+	duration: 3,
+	scrollTrigger: {
+		trigger: '.sec7-desc',
+		start: 'top 80%',
+		end: 'top 50%',
+		delay: 3,
+		toggleActions: 'play none none reverse',
+	},
+});
+const sec7Text = document.querySelector('.sec7-text');
+
+ani7.from('.sec7-text .line .char', {
+	y: 300,
+	autoAlpha: 0,
+	duration: 0.7,
+	ease: 'back.out(1)',
+	stagger: 0.05,
+});
+
+ScrollTrigger.create({
+	animation: ani7,
+	trigger: sec7Text,
+	start: 'top 70%',
+	markers: false,
+	// scrub: 0.5
+});
+
+//section8
+const ani8 = gsap.timeline();
+
+gsap.set('.sec8-con1', { autoAlpha: 1, delay: 4 });
+gsap.from('.sec8-con1', {
+	duration: 1.5,
+	yPercent: -100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec8-con1 .sec8-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		markers: false,
+	},
+});
+gsap.from('.sec8-con1 .sec8-img1', {
+	duration: 1.5,
+	yPercent: 100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec8-con1 .sec8-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		delay: 1, // 애니메이션 시작 전 대기 시간
+		markers: false,
+	},
+});
+
+gsap.set('.sec8-con2', { autoAlpha: 1, delay: 4 });
+
+gsap.from('.sec8-con2', {
+	duration: 1.5,
+	yPercent: -100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec8-con1 .sec8-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		markers: false,
+	},
+});
+gsap.from('.sec8-con2-1', {
+	duration: 1.5,
+	yPercent: 100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec8-con1 .sec8-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		delay: 1, // 애니메이션 시작 전 대기 시간
+		markers: false,
+	},
+});
+
+gsap.from('.sec8-desc', {
+	opacity: 0,
+	duration: 3,
+	scrollTrigger: {
+		trigger: '.sec8-desc',
+		start: 'top 80%',
+		end: 'top 50%',
+		delay: 3,
+		toggleActions: 'play none none reverse',
+	},
+});
+const sec8Text = document.querySelector('.sec8-text');
+
+ani8.from('.sec8-text .line .char', {
+	y: 300,
+	autoAlpha: 0,
+	duration: 0.7,
+	ease: 'back.out(1)',
+	stagger: 0.05,
+});
+
+ScrollTrigger.create({
+	animation: ani8,
+	trigger: sec8Text,
+	start: 'top 70%',
+	markers: false,
+	// scrub: 0.5
+});
+
+//section 9
+const ani9 = gsap.timeline();
+
+gsap.set('.sec9-con1', { autoAlpha: 1, delay: 4 });
+gsap.from('.sec9-con1', {
+	duration: 1.5,
+	yPercent: -100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec9-con1 .sec9-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		markers: false,
+	},
+});
+gsap.from('.sec9-con1 .sec9-img1', {
+	duration: 1.5,
+	yPercent: 100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec9-con1 .sec9-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		delay: 1, // 애니메이션 시작 전 대기 시간
+		markers: false,
+	},
+});
+
+gsap.set('.sec9-con2', { autoAlpha: 1, delay: 4 });
+
+gsap.from('.sec9-con2', {
+	duration: 1.5,
+	yPercent: -100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec9-con1 .sec9-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		markers: false,
+	},
+});
+gsap.from('.sec9-con2-1', {
+	duration: 1.5,
+	yPercent: 100,
+	ease: 'power2.out',
+	scrollTrigger: {
+		trigger: '.sec9-con1 .sec9-img1',
+		start: 'top 20%', // 섹션 상단이 뷰포트의 80%에 도달했을 때 애니메이션 시작
+		end: 'bottom 20%', // 섹션 하단이 뷰포트의 20%에 도달했을 때 애니메이션 완료
+		delay: 1, // 애니메이션 시작 전 대기 시간
+		markers: false,
+	},
+});
+
+gsap.from('.sec9-desc', {
+	opacity: 0,
+	duration: 3,
+	scrollTrigger: {
+		trigger: '.sec9-desc',
+		start: 'top 80%',
+		end: 'top 50%',
+		delay: 3,
+		toggleActions: 'play none none reverse',
+	},
+});
+const sec9Text = document.querySelector('.sec9-text');
+
+ani8.from('.sec9-text .line .char', {
+	y: 300,
+	autoAlpha: 0,
+	duration: 0.7,
+	ease: 'back.out(1)',
+	stagger: 0.05,
+});
+
+ScrollTrigger.create({
+	animation: ani9,
+	trigger: sec9Text,
+	start: 'top 70%',
+	markers: false,
+	// scrub: 0.5
+});
+
 //가로모드
 const horizontal = document.querySelector('#horizontal');
 const horizonSec = document.querySelector('#section10');
@@ -312,4 +769,4 @@ ScrollTrigger.create({
 	pin: true,
 	scrub: true,
 });
-np
+np;

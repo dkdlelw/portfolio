@@ -28,7 +28,7 @@
         justify-content: space-between;
         margin-left: auto;
         .img-inner {
-            .container1 {
+            .sec5-con1 {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
@@ -52,7 +52,7 @@
                 }
             }
 
-            .container2 {
+            .sec5-con2 {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
@@ -142,6 +142,7 @@
         color: #D8D8D8;
         text-align: right;
         white-space: nowrap;
+        z-index: 200;
 
     }
 }
