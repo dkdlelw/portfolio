@@ -740,7 +740,7 @@ gsap.from('.sec9-desc', {
 });
 const sec9Text = document.querySelector('.sec9-text');
 
-ani8.from('.sec9-text .line .char', {
+ani9.from('.sec9-text .line .char', {
 	y: 300,
 	autoAlpha: 0,
 	duration: 0.7,
@@ -769,4 +769,82 @@ ScrollTrigger.create({
 	pin: true,
 	scrub: true,
 });
-np;
+
+//section10
+const sec10Img = document.querySelector('.sec10-img');
+const sec10Text = document.querySelector('.sec10-text');
+
+const ani10 = gsap.timeline();
+ani10.from('.sec10-text .line:nth-child(1) .char', {
+	y: 300,
+	autoAlpha: 0,
+	duration: 0.7,
+	ease: 'back.out(1)',
+	stagger: 0.05,
+});
+
+ScrollTrigger.create({
+	animation: ani10,
+	trigger: sec10Text,
+	start: 'top 70%',
+	markers: false,
+	// scrub: 0.5
+});
+
+gsap.from('.sec10-img', {
+	opacity: 0,
+	duration: 2.5,
+	scrollTrigger: {
+		trigger: '.sec10-img',
+		start: 'top 80%',
+		end: 'top 50%',
+		toggleActions: 'play none none reverse',
+	},
+});
+
+gsap.from('.sec10-img3', {
+	opacity: 0,
+	duration: 3,
+	scrollTrigger: {
+		trigger: '.sec10-img3',
+		start: 'top 80%',
+		end: 'top 50%',
+		toggleActions: 'play none none reverse',
+	},
+});
+
+//section13
+gsap.from('.sec13-img', {
+	opacity: 0,
+	duration: 2.5,
+	scrollTrigger: {
+		trigger: '#section13',
+		start: 'top 80%',
+		end: 'top 50%',
+		toggleActions: 'play none none reverse',
+	},
+});
+
+gsap.from('.sec13-text .split', {
+	opacity: 0,
+	duration: 2,
+	y: 50,
+	stagger: 0.5,
+	scrollTrigger: {
+		trigger: '#section13',
+		start: 'top 80%',
+		end: 'top 50%',
+		toggleActions: 'play none none reverse',
+	},
+});
+
+gsap.from('.sec13-img3', {
+	opacity: 0,
+	duration: 3,
+	scrollTrigger: {
+		trigger: '.sec13-img3',
+		start: 'top 80%',
+		end: 'top 50%',
+		toggleActions: 'play none none reverse',
+	},
+});
