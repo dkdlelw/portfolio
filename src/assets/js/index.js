@@ -955,7 +955,7 @@ scrollT2
 		'.sec14-img1',
 		{
 			y: 500,
-			duration: 0.5,
+			duration: 1.5,
 			autoAlpha: 0,
 			ease: 'circ',
 		},
@@ -993,7 +993,7 @@ scrollT2
 		'.sec15-img1',
 		{
 			y: 500,
-			duration: 0.5,
+			duration: 2,
 			autoAlpha: 0,
 			ease: 'circ',
 		},
@@ -1047,4 +1047,36 @@ ScrollTrigger.create({
 	animation: scrollT2,
 	trigger: sec15Text,
 	start: 'left -20%',
+});
+
+//section17
+const ani17 = gsap.timeline();
+ani17.fromTo(
+	'#section17 .sec17-text .char',
+	{
+		x: 50,
+		opacity: 0,
+	},
+	{
+		duration: 1,
+		x: 0,
+		opacity: 1,
+		ease: 'power2.easeOut',
+		stagger: {
+			from: 'start',
+			amount: 0.5,
+			delay: -1.5,
+		},
+	},
+);
+gsap.from('.sec17-img2', {
+	opacity: 0,
+	duration: 3,
+	scrollTrigger: {
+		trigger: '.sec17-img2',
+		start: 'top 80%',
+		end: 'top 50%',
+		delay: 5,
+		toggleActions: 'play none none reverse',
+	},
 });
