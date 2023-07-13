@@ -25,3 +25,19 @@
     background-color: #F9F8F6;
 
 }
+/* 아래의 모든 코드는 영역::코드로 사용 */
+body::-webkit-scrollbar {
+    width: 8px;  /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+    height: 10%; /* 스크롤바의 길이 */
+    background: #4B8FB6; /* 스크롤바의 색상 */
+    
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #cbd5dbe0;  /*스크롤바 뒷 배경 색상*/
+}
+

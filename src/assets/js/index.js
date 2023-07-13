@@ -108,6 +108,7 @@ gsap.from('.sec2-img', {
 
 gsap.registerPlugin(ScrollTrigger);
 
+//section3
 const sec3Text = document.querySelectorAll('.sec3-text3 .split');
 const sec3Img = document.querySelectorAll('.sec3-img img');
 const ani3 = gsap.timeline();
@@ -149,7 +150,7 @@ gsap.from('.sec3-text2 img', {
 	},
 });
 
-function scroll() {
+function scrollAni1() {
 	let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 	sec3Img.forEach(item => {
 		const sec3Img = item;
@@ -164,10 +165,10 @@ function scroll() {
 		});
 	});
 
-	requestAnimationFrame(scroll);
+	requestAnimationFrame(scrollAni1);
 }
 
-scroll();
+scrollAni1();
 
 const ani4 = gsap.timeline();
 ani4.fromTo(
@@ -955,7 +956,7 @@ scrollT2
 		'.sec14-img1',
 		{
 			y: 500,
-			duration: 1.5,
+			duration: 0.5,
 			autoAlpha: 0,
 			ease: 'circ',
 		},
@@ -993,7 +994,7 @@ scrollT2
 		'.sec15-img1',
 		{
 			y: 500,
-			duration: 2,
+			duration: 0.5,
 			autoAlpha: 0,
 			ease: 'circ',
 		},
@@ -1049,10 +1050,10 @@ ScrollTrigger.create({
 	start: 'left -20%',
 });
 
-//section17
-const ani17 = gsap.timeline();
-ani17.fromTo(
-	'#section17 .sec17-text .char',
+//section16
+const ani16 = gsap.timeline();
+ani16.fromTo(
+	'#section16 .sec16-text .char',
 	{
 		x: 50,
 		opacity: 0,
@@ -1062,6 +1063,7 @@ ani17.fromTo(
 		x: 0,
 		opacity: 1,
 		ease: 'power2.easeOut',
+		trigger: '#section16',
 		stagger: {
 			from: 'start',
 			amount: 0.5,
@@ -1069,14 +1071,5 @@ ani17.fromTo(
 		},
 	},
 );
-gsap.from('.sec17-img2', {
-	opacity: 0,
-	duration: 3,
-	scrollTrigger: {
-		trigger: '.sec17-img2',
-		start: 'top 80%',
-		end: 'top 50%',
-		delay: 5,
-		toggleActions: 'play none none reverse',
-	},
-});
+
+//section18

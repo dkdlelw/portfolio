@@ -8,7 +8,10 @@
 </head>
 
 <body>
-
+  <div id="loading">
+    <div id="loading-text">0%</div>
+  </div>
+  <!-- loading -->
   <div id="contents">
     <section id="section1">
       <div class="sec1-wrap">
@@ -38,8 +41,7 @@
           <li><a href="#section5" class="split">javascript</a></li>
           <li><a href="#section10" class="split">react</a></li>
           <li><a href="#section13" class="split">php</a></li>
-          <li><a href="#section16" class="split">personality</a></li>
-          <li><a href="#section18" class="split">contact</a></li>
+          <li><a href="#section17" class="split">contact</a></li>
         </ul>
       </div>
       <div class="sec2-text">
@@ -273,7 +275,7 @@
     <!-- //section9 -->
 
     <!-- 가로모드 시작 -->
-    <main id="horizontal">
+    <div id="horizontal">
       <section id="section10">
         <div class="sec10-img">
           <div class="sec10-img1"></div>
@@ -384,29 +386,20 @@
         </div>
       </section>
       <!-- //section15 -->
-    </main>
+    </div>
     <!-- //가로모드 끝 -->
     <section id="section16">
-      <div class="sec16-title">api site</div>
-      <div class="sec16-img"></div>
-      <div class="sec16-box">
-        <div class="sec16-box1">react</div>
-        <div>vue</div>
-      </div>
-    </section>
-    <!-- //보류 -->
-    <section id="section17">
-      <div class="sec17-img1"></div>
-      <div class="sec17-img2"></div>
-      <div class="sec17-text">
+      <div class="sec16-img1"></div>
+      <div class="sec16-img2"></div>
+      <div class="sec16-text">
         <div class="split">contact</div>
         <div class="split">to me</div>
       </div>
     </section>
-    <!-- //section17 -->
-    <section id="section18">
-      <div class="sec18-img"></div>
-      <div class="sec18-list">
+    <!-- //section16 -->
+    <section id="section17">
+      <div class="sec17-img"></div>
+      <div class="sec17-list">
         <ul>
           <li>javascript</li>
           <li>php</li>
@@ -414,16 +407,16 @@
         </ul>
       </div>
       <div class="center">
-        <div class="sec18-text">
+        <div class="sec17-text">
           <div class="split">I HARNESS MY ENERGY AND CHANNEL IT INTO CRAFTING</div>
           <div class="split">REMARKABLE WEB EXPERIENCES ON THE DIGITAL CANVAS</div>
         </div>
-        <a href="#" class="sec18-btn">contact</a>
+        <a href="#" class="sec17-btn">contact</a>
       </div>
-      <div class="sec18-name">
+      <div class="sec17-name">
         <div class="split">lee seung yeon</div>
       </div>
-      <div class="sec18-footer">
+      <div class="sec17-footer">
         <div class="footer__header">
           <p>how to contact</p>
         </div>
@@ -440,7 +433,7 @@
         <div class="copyright"></div>
       </div>
     </section>
-    <!-- //section18 -->
+    <!-- //sec17 -->
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
@@ -448,6 +441,11 @@
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
 
   <script src="https://unpkg.com/split-type"></script>
+  <script>
+    $(window).on('load', function () {
+      $("#load").hide
+    })
+  </script>
   <script type="module" src="main.js"></script>
 </body>
 
