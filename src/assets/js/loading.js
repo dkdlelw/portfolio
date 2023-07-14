@@ -1,27 +1,96 @@
-window.onload = function () {
-	measurePageLoadTime();
-};
-function measurePageLoadTime() {
-	var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
-	// 로딩 화면 요소
-	var loadingElement = document.getElementById('loading');
-	var loadingTextElement = document.getElementById('loading-text');
-	// 로딩 수치 업데이트
-	var progress = 0;
-	var increment = 100 / loadTime; // 로딩 시간에 따라 증가하는 진행률 계산
-	var intervalId = setInterval(function () {
-		progress += increment;
-		loadingTextElement.textContent = Math.round(progress) + '%';
-		if (progress >= 100) {
-			clearInterval(intervalId);
-			progress = 100; // 진행률(progress)을 100으로 제한
-			loadingTextElement.textContent = Math.round(progress) + '%'; // 수치를 100%로 표시
-			loadingElement.classList.add('hidden'); // 로딩 화면에 hidden 클래스 추가
-			document.body.style.visibility = 'visible'; // 페이지 내용 보이기
-			setTimeout(function () {
-				loadingElement.style.display = 'none'; // 로딩 화면 요소 제거
-				startPage(); // 페이지 실행 코드
-			}, 500);
-		}
+function imagesProgress() {
+	var $container = $('#loading'),
+		$progressText = $container.find('#loading-text'),
+		imgLoad = imagesLoaded('body'),
+		imgTotal = imgLoad.images.length,
+		imgLoaded = 0,
+		current = 0,
+		progressTimer = setInterval(updateProgress, 2000 / 60);
+
+	imgLoad.on('progress', function () {
+		imgLoaded++;
 	});
+
+	function updateProgress() {
+		var target = (imgLoaded / imgTotal) * 100;
+
+		current += (target - current) * 0.1;
+		$progressText.text(Math.floor(current) + '%');
+
+		if (current >= 100) {
+			clearInterval(progressTimer);
+			$container.animate({ opacity: '0' }, 1500, 'easeInOutQuint').animate({ top: '-100%' }, 1500);
+
+			gsap.set('#section1 .sec1-wrap', { width: 0, height: 0 });
+			gsap.set('#section1 .sec1-box', { width: 0 });
+			gsap.set('#section1 .sec1-box .text .char', { autoAlpha: 0, y: 10 });
+			gsap.set('#section1 .sec1-box .logo', { autoAlpha: 0, y: 50 });
+			gsap.set('#section1 .sec1-box .scroll', { autoAlpha: 0, y: 50 });
+
+			setTimeout(() => {
+				gsap.to('.sec1-wrap', {
+					duration: 1,
+					width: '100%',
+					height: '100%',
+					autoAlpha: 1,
+					ease: 'power3.out',
+				});
+				gsap.to('.sec1-box', {
+					duration: 1,
+					width: '60vw',
+					autoAlpha: 1,
+					delay: 0.8,
+					ease: 'power3.out',
+				});
+				gsap.to('#section1 .sec1-box .text .char', {
+					duration: 1,
+					y: 0,
+					autoAlpha: 1,
+					delay: 2,
+					ease: 'power3.out',
+					stagger: 0.01,
+				});
+
+				gsap.to('#section1 .sec1-box .logo', {
+					duration: 1,
+					y: 0,
+					autoAlpha: 1,
+					delay: 2.6,
+					ease: 'power3.out',
+				});
+				gsap.to('#section1 .sec1-box .scroll', {
+					duration: 1,
+					y: 0,
+					autoAlpha: 1,
+					delay: 3,
+					ease: 'power3.out',
+				});
+			}, 2000);
+
+			const panel = document.querySelector('#section1');
+
+			ScrollTrigger.create({
+				trigger: panel,
+				start: 'top top',
+				pin: true,
+				pinSpacing: false,
+			});
+			const ani1 = gsap.timeline();
+			ani1.to('.sec1-box', { duration: 4, scale: 5, ease: 'none', backgroundColor: '#4B8FB6' });
+			const panel2 = document.querySelector('#section2');
+
+			ScrollTrigger.create({
+				animation: ani1,
+				trigger: panel2,
+				start: 'top 90%',
+				markers: false,
+				scrub: 0.5,
+			});
+		}
+		if (current > 99.9) {
+			current = 100;
+		}
+	}
 }
+
+imagesProgress();

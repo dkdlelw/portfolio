@@ -49,7 +49,9 @@ body::-webkit-scrollbar-track {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #e8f7ffe0;
+    background-color: #e8f7ff;
+    position: absolute;
+    z-index: 9999;
 
     .load__wrap {
         .ping {
