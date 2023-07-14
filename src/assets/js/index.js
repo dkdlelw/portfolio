@@ -1,14 +1,14 @@
-function startPage() {
-	const lenis = new Lenis();
-	function raf(time) {
-		lenis.raf(time);
-		requestAnimationFrame(raf);
-	}
+const lenis = new Lenis();
+function raf(time) {
+	lenis.raf(time);
 	requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
 
-	const targets = gsap.utils.toArray('.split');
-	let SplitClient = new SplitType(targets, { type: 'lines, words, chars' });
+const targets = gsap.utils.toArray('.split');
+let SplitClient = new SplitType(targets, { type: 'lines, words, chars' });
 
+function startPage() {
 	gsap.set('#section1 .sec1-wrap', { width: 0, height: 0 });
 	gsap.set('#section1 .sec1-box', { width: 0 });
 	gsap.set('#section1 .sec1-box .text .char', { autoAlpha: 0, y: 10 });
@@ -62,22 +62,21 @@ function startPage() {
 		pin: true,
 		pinSpacing: false,
 	});
-
-	const panel2 = document.querySelector('#section2');
-
-	const ani1 = gsap.timeline();
-	ani1.to('.sec1-box', { duration: 4, scale: 5, ease: 'none', backgroundColor: '#4B8FB6' });
-
-	ScrollTrigger.create({
-		animation: ani1,
-		trigger: panel2,
-		start: 'top 90%',
-		markers: false,
-		scrub: 0.5,
-	});
 }
 startPage();
 
+const panel2 = document.querySelector('#section2');
+
+const ani1 = gsap.timeline();
+ani1.to('.sec1-box', { duration: 4, scale: 5, ease: 'none', backgroundColor: '#4B8FB6' });
+
+ScrollTrigger.create({
+	animation: ani1,
+	trigger: panel2,
+	start: 'top 90%',
+	markers: false,
+	scrub: 0.5,
+});
 const sec2Img = document.querySelector('.sec2-img');
 const sec2Text = document.querySelector('.sec2-text');
 
